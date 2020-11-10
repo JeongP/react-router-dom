@@ -9,11 +9,11 @@ React Router DOM의 개념들을 익히고 사용해보자.
 react router DOM의 wrapper component로
 가장 최상단 컴포넌트 밖에 씌워준다.
 
-> example
 > ``` c
 > int val = 10;
 > printf(%s,"Hello, World!");
 > ```
+> [\^myfootnote] Example
 
 
 ### `Route`
