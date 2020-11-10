@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {BrowerRouter as Router} from 'react-router-dom'
+import {BrowerRouter as Router, Route} from 'react-router-dom'
 
 function Home () {
   return (
@@ -34,7 +34,12 @@ function App() {
   return (
     <div>
       <h1>Hello React Router DOM</h1>
-      
+      <li><a href="/">Home</a></li>
+      <li><a href="/topics">Topics</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <Route exact path="/"><Home></Home></Route>
+      <Route path="/topics"><Topics></Topics></Route>
+      <Route path="/contact"><Contact></Contact></Route>
     </div>
   );
 }
