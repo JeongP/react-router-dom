@@ -9,14 +9,14 @@ React Router DOM의 개념들을 익히고 사용해보자.
 react router DOM의 wrapper component로
 가장 최상단 컴포넌트 밖에 씌워준다.
 > Example
-> ``` c
-> ReactDOM.render(
->  <Router>
->    <App />
->  </Router>,
->  document.getElementById('root')
-> );
-> ```
+``` c
+ReactDOM.render(
+  <Router>
+  <App />
+  </Router>,
+  document.getElementById('root')
+);
+```
 
 
 
@@ -24,10 +24,10 @@ react router DOM의 wrapper component로
 
 url path에 따라 어떤 Component가 실행될지 정해주는 녀석.
 > Example
-> ``` c
-> <Route exact path="/"><Home></Home></Route>
-> ```
-> [^myfootnote]: exact는 path와 정확히 일치하는 url에 대한 부분일 때만 동작하게 하는 녀석.
+``` c
+<Route exact path="/"><Home></Home></Route>
+```
+ exact는 path와 정확히 일치하는 url에 대한 부분일 때만 동작하게 하는 녀석.
 
 
 ### `Link`
