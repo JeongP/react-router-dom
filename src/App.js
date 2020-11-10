@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {BrowerRouter as Router, Route, Switch, Link} from 'react-router-dom'
+import {BrowerRouter as Router, Route, Switch, Link, NavLink} from 'react-router-dom'
 
 function Home () {
   return (
@@ -16,7 +16,20 @@ function Topics () {
   return(
     <div>
       <h2>Topics</h2>
-      Topics...
+      {/* 
+        NavLink
+        => Link Tag 에서 actve 속성 먹인거.
+      */}
+      <ul>
+        <li><NavLink to ="/topics/1">HTML</NavLink></li>
+        <li><NavLink to ="/topics/2">JS</NavLink></li>
+        <li><NavLink to ="/topics/3">React</NavLink></li>
+      </ul>
+      <Switch>
+        <Route path="/topics/1">Html is..</Route>
+        <Route path="/topics/2">js is..</Route>
+        <Route path="/topics/3">react is..</Route>
+      </Switch>
     </div>
   );
 }
@@ -41,6 +54,7 @@ function App() {
         <li><Link to="/contact">Contact</Link></li>
       </ul>
 
+      
       {/* Switch는 하나만 선택하고 나머지 것들은 버린다. */}
       <Switch>
         <Route exact path="/"><Home></Home></Route>
