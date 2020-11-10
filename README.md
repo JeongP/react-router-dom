@@ -1,10 +1,33 @@
-# Getting Started with Create React App
+# React Router DOM
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React Router DOM의 개념들을 익히고 사용해보자.
 
-## Available Scripts
+## 개념들
 
-In the project directory, you can run:
+### `Router`
+
+react router DOM의 wrapper component로
+가장 최상단 컴포넌트 밖에 씌워준다.
+
+> example
+> ``` c
+> int val = 10;
+> printf(%s,"Hello, World!");
+> ```
+
+
+### `Route`
+
+지정된 path
+### `Link`
+
+### `Switch`
+
+### `NavLink`
+
+### `useParams`
+
+
 
 ### `yarn start`
 
