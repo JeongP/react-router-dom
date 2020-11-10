@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import {BrowerRouter as Router, Route, Switch, Link, NavLink} from 'react-router-dom'
+import {BrowerRouter as Router, Route, Switch, Link, NavLink, useParams} from 'react-router-dom'
+import { render } from 'react-dom';
 
 function Home () {
   return (
@@ -12,7 +13,40 @@ function Home () {
   );
 }
 
+var contents = [
+  {id:1, title:"HTML", desc:"Html is..."},
+  {id:2, title:"JS", desc:"JS is..."},
+  {id:3, title:"REACT", desc:"REACT is..."}
+]
+
+function Topic() {
+  let param = useParams();
+  // console.log(param)
+  let id = param.topic_id
+  let title, desc;
+  for(var i=0;i<contents.length;i++) {
+    if(Number(id) === contents[i].id) {
+      title = contents[i].title;
+      desc = contents[i].desc;
+      break;
+    }
+    title = "Sorry";
+    desc = "Not Found";
+  }
+  return(
+    <div>
+      <h3>{title}</h3>
+      {desc}
+    </div>
+  );
+}
+
 function Topics () {
+  
+  var lis = [];
+  for(var i=0;i<contents.length;i++) {
+    lis.push(<li><NavLink to={"/topics/"+contents[i].id}>{contents[i].title}</NavLink></li>)
+  }
   return(
     <div>
       <h2>Topics</h2>
@@ -21,14 +55,10 @@ function Topics () {
         => Link Tag 에서 actve 속성 먹인거.
       */}
       <ul>
-        <li><NavLink to ="/topics/1">HTML</NavLink></li>
-        <li><NavLink to ="/topics/2">JS</NavLink></li>
-        <li><NavLink to ="/topics/3">React</NavLink></li>
+        {lis}
       </ul>
       <Switch>
-        <Route path="/topics/1">Html is..</Route>
-        <Route path="/topics/2">js is..</Route>
-        <Route path="/topics/3">react is..</Route>
+        <Route path="/topics/:topic_id"><Topic></Topic></Route>
       </Switch>
     </div>
   );
