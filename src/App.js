@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {BrowerRouter as Router, Route, Switch} from 'react-router-dom'
+import {BrowerRouter as Router, Route, Switch, Link} from 'react-router-dom'
 
 function Home () {
   return (
@@ -34,9 +34,12 @@ function App() {
   return (
     <div>
       <h1>Hello React Router DOM</h1>
-      <li><a href="/">Home</a></li>
-      <li><a href="/topics">Topics</a></li>
-      <li><a href="/contact">Contact</a></li>
+      <ul>
+        {/* Link => SPA에서의 특징 중 하나인 reload 없이 페이지 변환(?)을 시켜줌 */}
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/topics">Topics</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
+      </ul>
 
       {/* Switch는 하나만 선택하고 나머지 것들은 버린다. */}
       <Switch>
